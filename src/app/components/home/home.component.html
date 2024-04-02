@@ -1,1 +1,41 @@
-<p>¡Mis personajes Disney!</p>
+<!-- <div class="main-container">
+	@for (character of characters?.data; track character._id) {
+		<div class="card" [routerLink]="['/detail', character._id]">
+			<img [src]="character.imageUrl" alt="Imagen de {{ character.name }}">
+			
+			<h5 class="card-title">
+				{{ character.name }}
+			</h5>
+		</div>
+	} @empty {
+	<div>
+		No hay ningún personaje
+	</div>
+	}
+	<button class="btn btn-success w-100" type="button" [disabled]="characters?.info?.nextPage == null"
+		(click)="loadMore()">Cargar más personajes</button>
+</div> -->
+
+<div class="row">
+	@for (character of characters?.data; track character._id) {
+		<div class="column" [routerLink]="['/detail', character._id]">
+			<img [src]="character.imageUrl" alt="Imagen de {{ character.name }}">
+		</div>
+	} @empty {
+	<div class="column">
+		No hay ningún personaje
+	</div>
+	}
+	<button class="btn btn-success w-100" type="button" [disabled]="characters?.info?.nextPage == null"
+		(click)="loadMore()">Cargar más personajes</button>
+</div>
+
+<!-- 
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->

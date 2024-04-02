@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+// Custom Services
 import { ApiService } from '../../services/api.service';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink,
+    FormsModule,
+    CommonModule,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less'
 })
 export class HomeComponent implements OnInit {
 
+  public characterName = '';
   public characters: any;
 
   constructor(private apiService: ApiService) {}
@@ -23,6 +34,25 @@ export class HomeComponent implements OnInit {
       .subscribe(data => {
         this.characters = data;
         console.log(data);
+      });
+  }
+
+  loadMore() {
+    this.apiService.getByUrl(this.characters.info.nextPage)
+      .subscribe((response: any) => {
+        this.characters = {
+          ...response,
+          data: [
+            ...this.characters.data,
+            ...response.data
+          ]
+        };
+      });
+  }
+  searchCharacter(name: string) {
+    this.apiService.searchCharacter(name)
+      .subscribe((response: any) => {
+        this.characters = response;
       });
   }
 }

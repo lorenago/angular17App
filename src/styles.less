@@ -1,8 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
 img {
     width: 100%;
-    height: auto;
-    // Gracias a esta propiedad se guarda el espacio de la imagen y asi no hay saltos en la carga.
-    // Es responsive.
-    aspect-ratio: 16/9;
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.column {
+    flex: 30%;
+    padding: 5px;
+    margin: 5px;
+    min-width: 250px;
+    img {
+        height: 30vh;
+        object-fit: cover;
+    }
+    // }
+}
+
+
+// article {
+//     padding: 16px;
+//     border-radius: 5px;
+//     border: 2px solid #0000;
+//     background: 
+//         linear-gradient(black, #222) padding-box,
+//         linear-gradient(#09f, white) border-box;
+// }

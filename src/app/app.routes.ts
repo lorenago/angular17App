@@ -4,6 +4,7 @@ import { DetailComponent } from './components/detail/detail.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'home/detail/:id', component: DetailComponent },
     { path: 'detail/:id', component: DetailComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
