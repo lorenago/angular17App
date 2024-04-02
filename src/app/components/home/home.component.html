@@ -30,6 +30,10 @@
 		(click)="loadMore()">Cargar más personajes</button>
 </div>
 
+<pre>
+	{{ characters$ | async | json }}
+</pre>
+
 <!-- 
 <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">

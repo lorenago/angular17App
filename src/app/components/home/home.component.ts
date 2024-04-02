@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
 
   public characterName = '';
   public characters: any;
+  characters$ = this.apiService.getAllCharacters();
 
   constructor(private apiService: ApiService) {}
 
