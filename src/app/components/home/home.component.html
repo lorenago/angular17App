@@ -1,22 +1,19 @@
-<!-- <div class="main-container">
-	@for (character of characters?.data; track character._id) {
-		<div class="card" [routerLink]="['/detail', character._id]">
-			<img [src]="character.imageUrl" alt="Imagen de {{ character.name }}">
-			
-			<h5 class="card-title">
-				{{ character.name }}
-			</h5>
+<div class="">
+	<div class="">
+		<img src="https://dummyimage.com/720x400" alt="" class="">
+		<div class="">
+			<h2 class="">CATEGORY</h2>
+			<a [routerLink]="['/home/product-details']"
+				[queryParams]="{ id: 999, color: 'red'}" class="">
+			PRODUCT TITLE</a>
+			<p class="">Photo booth fam kinfolk cold-pressed tousled waistcoat.</p>
+			<div class=""></div>
+			<a class="">Learn More</a>
 		</div>
-	} @empty {
-	<div>
-		No hay ningún personaje
 	</div>
-	}
-	<button class="btn btn-success w-100" type="button" [disabled]="characters?.info?.nextPage == null"
-		(click)="loadMore()">Cargar más personajes</button>
-</div> -->
+</div>
 
-<div class="row">
+<!-- <div class="row">
 	@for (character of characters?.data; track character._id) {
 		<div class="column" [routerLink]="['/detail', character._id]">
 			<img [src]="character.imageUrl" alt="Imagen de {{ character.name }}">
@@ -28,18 +25,4 @@
 	}
 	<button class="btn btn-success w-100" type="button" [disabled]="characters?.info?.nextPage == null"
 		(click)="loadMore()">Cargar más personajes</button>
-</div>
-
-<pre>
-	{{ characters$ | async | json }}
-</pre>
-
-<!-- 
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div> -->
+</div> -->

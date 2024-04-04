@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // Custom Services
@@ -13,7 +12,6 @@ import { ApiService } from '../../services/api.service';
   imports: [
     RouterLink,
     FormsModule,
-    CommonModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less'
