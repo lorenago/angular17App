@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
     RouterLink
   ],
   templateUrl: './details.component.html',
-  styleUrl: './details.component.less'
+  styleUrl: './details.component.scss'
 })
 export class ProductDetailsComponent {
   @Input({ alias: 'id' }) productId!: string;

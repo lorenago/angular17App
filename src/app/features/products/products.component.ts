@@ -8,7 +8,7 @@ import { CardComponent } from './card/card.component';
   standalone: true,
   imports: [ AsyncPipe, CardComponent ],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.less'
+  styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
   apiSvc = inject(ApiService);

@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './detail.component.html',
-  styleUrl: './detail.component.less'
+  styleUrl: './detail.component.scss'
 })
 export class DetailComponent {
   public characterId: string = '';

@@ -14,7 +14,7 @@ import { ApiService } from '../../services/api.service';
     FormsModule,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.less'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 

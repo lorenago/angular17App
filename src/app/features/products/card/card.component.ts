@@ -13,7 +13,7 @@ function addDiscountProperty(product: any) {
     RouterLink
   ],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.less'
+  styleUrl: './card.component.scss'
 })
 export class CardComponent {
   @Input({ required: true, transform: addDiscountProperty }) product!: any;
