@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,15 @@ export class ApiService {
   constructor( private http: HttpClient ) {}
 
   public disneyBaseUrl = environment.disneyBaseUrl;
+  public storeBaseUrl = environment.storeBaseUrl;
 
   public getByUrl(url: string) {
     return this.http.get(url);
   }
 
+  //////////////////////////////////////////////////////////////////////////////
+  /////////////////////////            DISNEY          /////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
   /**
    * Params
    *  page: The page number to get. Default: 1
@@ -30,15 +35,18 @@ export class ApiService {
     return this.http.get(`${this.disneyBaseUrl}/character`, options);
   }
 
-  public getAllCharacters(pagination?: any) {
-    const params = {
-      page: pagination?.page|| 1,
-      pageSize: pagination?.pageSize || 50
-    };
+  public getAllCharacters() {
     return this.http.get(`${this.disneyBaseUrl}/character`);
   }
 
   public getOneCharacter(id: string) {
     return this.http.get(`${this.disneyBaseUrl}/character/${id}`);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  /////////////////////////           PRODUCTS         /////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  public getAllProducts(): Observable<any> {
+    return this.http.get(`${this.storeBaseUrl}/products`);
   }
 }

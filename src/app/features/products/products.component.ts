@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ApiService } from '../../services/api.service';
+import { AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [],
+  imports: [ RouterLink, AsyncPipe ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.less'
 })
 export class ProductsComponent {
-
+  apiSvc = inject(ApiService);
+  products$ = this.apiSvc.getAllProducts();
 }

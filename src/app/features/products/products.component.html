@@ -1,1 +1,19 @@
 <p>products works!</p>
+@if(products$ | async; as products){
+    @for (product of products; track product.id) {
+        <div class="">
+            <div class="">
+                <img src="{{product.image}}" alt="" class="">
+                <div class="">
+                    <h2 class="">{{product.category}}</h2>
+                    <a [routerLink]="['/home/product-details', product.id]" class="">
+                        {{product.title}}
+                    </a>
+                    <p class="">{{product.description}}</p>
+                    <div class=""></div>
+                    <a class="">Learn More</a>
+                </div>
+            </div>
+        </div>
+    }
+}
