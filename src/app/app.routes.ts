@@ -11,8 +11,7 @@ export const routes: Routes = [
     { path: 'home/detail/:id', component: DetailComponent },
     { path: 'home/cart', component: CartComponent },
     { path: 'home/products', component: ProductsComponent },
-    // { path: 'home/product-details/:id:color', component: ProductDetailsComponent },
-    { path: 'home/product-details', component: ProductDetailsComponent, pathMatch: 'prefix' },
+    { path: 'home/product-details/:id', component: ProductDetailsComponent },
     { path: 'home/products', component: ProductsComponent, children: [
         { path: 'details/:id', component: ProductDetailsComponent }
     ]},
