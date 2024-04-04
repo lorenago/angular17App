@@ -12,7 +12,6 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductDetailsComponent {
   @Input('id') productId!: string;
-  @Input('color') productColor!: string;
   // public productId: string | null = '';
   // private route = inject(ActivatedRoute);
 
