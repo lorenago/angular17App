@@ -1,0 +1,14 @@
+<div class="">
+    <a class="" [routerLink]="['/home/product-details', product.id]">
+        <img src="{{product.image}}" alt="product-detail" class="">
+    </a>
+    <div class="">
+        <h3 class="">{{product.category}}</h3>
+        <h2 class="">
+            <a [routerLink]="['/home/product-details', product.id]" class="">
+                {{product.title}}
+            </a>
+        </h2>
+        <p class="">{{product.price}}</p>
+    </div>
+</div>

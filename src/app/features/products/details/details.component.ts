@@ -11,15 +11,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './details.component.less'
 })
 export class ProductDetailsComponent {
-  @Input('id') productId!: string;
-  // public productId: string | null = '';
-  // private route = inject(ActivatedRoute);
-
-  // ngOnInit() {
-  //  this.productId = this.route.snapshot.paramMap.get('id');
-  //  this.productId = this.route.snapshot.params?.['id'];
-  //  this.route.params.subscribe((params: Params) => {  
-  //     this.productId = params?.['id'];
-  //   });
-  // }
+  @Input({ alias: 'id' }) productId!: string;
 }
