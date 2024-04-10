@@ -46,7 +46,11 @@ export class ApiService {
   //////////////////////////////////////////////////////////////////////////////
   /////////////////////////           PRODUCTS         /////////////////////////
   //////////////////////////////////////////////////////////////////////////////
+  public getProduct(productId: string = '1'): Observable<any> {
+    return this.http.get<any>(`${this.storeBaseUrl}/products/${productId}`);
+  }
+
   public getAllProducts(): Observable<any> {
-    return this.http.get(`${this.storeBaseUrl}/products`);
+    return this.http.get<any>(`${this.storeBaseUrl}/products`);
   }
 }
