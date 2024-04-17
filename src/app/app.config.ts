@@ -13,9 +13,10 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(),
       withViewTransitions(),
     ),
+    provideClientHydration(),
     provideHttpClient(
       withFetch(),
       withInterceptors([ErrorResponseInterceptor])
-    ), provideClientHydration(),
+    ),
   ]
 };

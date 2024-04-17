@@ -14,11 +14,11 @@ import { CardComponent } from './card/card.component';
 export class ProductsComponent implements OnInit {
   apiSvc = inject(ApiService);
   products$ = this.apiSvc.getAllProducts();
-
+  
   apiSvc2: any;
   private readonly fake_injector = inject(EnvironmentInjector);
 
-  ngOnInit() {
+  ngOnInit(): void {
     runInInjectionContext(this.fake_injector, () => {
       this.apiSvc2 = inject(ApiService);
       const result = toSignal(this.products$);
